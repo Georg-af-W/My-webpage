@@ -3,6 +3,7 @@ from unittest import TestCase, main
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from time import sleep
 
 
 class TestHemsida(TestCase):
@@ -46,6 +47,8 @@ class TestHemsida(TestCase):
     def testPageNumber(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("assets/img/demo-image-01.jpg", self.browser.page_source)
+        self.browser.get_screenshot_as_file("screenshot.png")
+
 
 
 
